@@ -16,6 +16,11 @@ public class GamesController {
 	@Autowired
 	private GameServices services;
 	
+	public GamesController(GameServices gs)
+	{
+		this.services = gs;
+	}
+	
 	@GetMapping("/game")
 	public ResponseEntity<List<Game>> getAllGames()
 	{

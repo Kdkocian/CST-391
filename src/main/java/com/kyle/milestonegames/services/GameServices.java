@@ -8,10 +8,16 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class GameServices {
 	
 	@Autowired
 	private GameRepository gameRepository;
+	
+	public GameServices(GameRepository gr)
+	{
+		this.gameRepository = gr;
+	}
 	
 	public Game createGame(Game game) //creates game in db
 	{
